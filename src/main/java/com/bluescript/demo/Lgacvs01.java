@@ -47,6 +47,7 @@ import com.bluescript.demo.model.CaEndowment;
 import com.bluescript.demo.model.CaHouse;
 import com.bluescript.demo.model.CaMotor;
 import com.bluescript.demo.model.CaCommercial;
+import com.bluescript.demo.entity.ksdsCustEntity;
 import com.bluescript.demo.model.CaClaim;
 
 @Getter
@@ -90,7 +91,7 @@ public class Lgacvs01 {
     @Autowired
     private CaClaim caClaim;
     @Autowired
-    private KsdscustRepository ksdscust;
+    private KsdscustRepository ksdscustrepo;
 
     private int wsResp;
     private int wsResp2;
@@ -111,18 +112,26 @@ public class Lgacvs01 {
     public ResponseEntity<Dfhcommarea> mainline(@RequestBody Dfhcommarea payload) {
         log.debug("Methodmainlinestarted..");
         BeanUtils.copyProperties(payload, dfhcommarea);
+        log.warn("dfhcommarea:"+dfhcommarea);
         try {
-            ksdscust.save(Long.valueOf(dfhcommarea.getCaCustomerNum()));
+           // ksdscust.save(Long.valueOf(dfhcommarea.getCaCustomerNum()));
+            ksdsCustEntity k = new ksdsCustEntity(dfhcommarea.getCaCustomerNum(),dfhcommarea.getCaCustomerRequest().toString());
+            log.warn("dfhcommarea.getCaCustomerNum():"+dfhcommarea.getCaCustomerNum());
+            
+            // k.setCustomerNum(dfhcommarea.getCaCustomerNum());
+            // k.setCustomerData(dfhcommarea.getCaCustomerRequest().toString());
+            ksdscustrepo.saveAndFlush(k);
+             
         } catch (Exception e) {
-            log.error("No Record Found");
+            log.error(e);
             wsResp = 1;
         }
         if (wsResp > 0) {
 
             dfhcommarea.setCaReturnCode(80);
-            writeErrorMessage();
+           // writeErrorMessage();
             log.error("Error code :, LGV0");
-            throw new RuntimeException("LGV0");
+            //throw new RuntimeException("LGV0");
             /* return */
 
         }
