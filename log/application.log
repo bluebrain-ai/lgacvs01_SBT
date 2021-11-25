@@ -3202,3 +3202,142 @@ insert into ksdscust (customerdata, customernumber) values (?, ?) [23502-200]
 2021-11-25 19:29:30.220  WARN 23644 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2021-11-25 19:29:30.753  INFO 23644 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6081 (http) with context path ''
 2021-11-25 19:29:31.012  INFO 23644 --- [main] com.bluescript.demo.lgacvs01Main         : Started lgacvs01Main in 3.536 seconds (JVM running for 3.947)
+2021-11-25 19:29:47.645  INFO 23644 --- [http-nio-6081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-25 19:29:47.645  INFO 23644 --- [http-nio-6081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-25 19:29:47.646  INFO 23644 --- [http-nio-6081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-25 19:29:47.710  WARN 23644 --- [http-nio-6081-exec-1] com.bluescript.demo.Lgacvs01             : dfhcommarea:Dfhcommarea(caRequestId=string, caReturnCode=0, caCustomerNum=4444, caRequestSpecific=string, caCustomerRequest=CaCustomerRequest(caFirstName=string, caLastName=string, caDob=string, caHouseName=string, caHouseNum=string, caPostcode=string, caNumPolicies=0, caPhoneMobile=string, caPhoneHome=string, caEmailAddress=string, caPolicyData=string), caCustsecrRequest=CaCustsecrRequest(caCustsecrPass=string, caCustsecrCount=string, caCustsecrState=string, caCustsecrData=string), caPolicyRequest=CaPolicyRequest(caPolicyNum=0, caPolicyCommon=CaPolicyCommon(caIssueDate=string, caExpiryDate=string, caLastchanged=string, caBrokerid=0, caBrokersref=string, caPayment=0), caPolicySpecific=string, caEndowment=CaEndowment(caEWithProfits=string, caEEquities=string, caEManagedFund=string, caEFundName=string, caETerm=0, caESumAssured=0, caELifeAssured=string, caEPaddingData=string), caHouse=CaHouse(caHPropertyType=string, caHBedrooms=0, caHValue=0, caHHouseName=string, caHHouseNumber=string, caHPostcode=string, caHFiller=string), caMotor=CaMotor(caMMake=string, caMModel=string, caMValue=0, caMRegnumber=string, caMColour=string, caMCc=0, caMManufactured=string, caMPremium=0, caMAccidents=0, caMFiller=string), caCommercial=CaCommercial(caBAddress=string, caBPostcode=string, caBLatitude=string, caBLongitude=string, caBCustomer=string, caBProptype=string, caBFireperil=0, caBFirepremium=0, caBCrimeperil=0, caBCrimepremium=0, caBFloodperil=0, caBFloodpremium=0, caBWeatherperil=0, caBWeatherpremium=0, caBStatus=0, caBRejectreason=string, caBFiller=string), caClaim=CaClaim(caCNum=0, caCDate=string, caCPaid=0, caCValue=0, caCCause=string, caCObservations=string, caCFiller=string)))
+2021-11-25 19:29:47.710  WARN 23644 --- [http-nio-6081-exec-1] com.bluescript.demo.Lgacvs01             : dfhcommarea.getCaCustomerNum():4444
+2021-11-25 19:29:47.737 DEBUG 23644 --- [http-nio-6081-exec-1] org.hibernate.SQL                        : 
+    select
+        ksdscusten0_.customernumber as customer1_0_0_,
+        ksdscusten0_.customerdata as customer2_0_0_ 
+    from
+        ksdscust ksdscusten0_ 
+    where
+        ksdscusten0_.customernumber=?
+2021-11-25 19:29:47.756 DEBUG 23644 --- [http-nio-6081-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        ksdscust
+        (customerdata, customernumber) 
+    values
+        (?, ?)
+2021-11-25 19:38:40.118  WARN 23644 --- [http-nio-6081-exec-3] com.bluescript.demo.Lgacvs01             : dfhcommarea:Dfhcommarea(caRequestId=01ACUS, caReturnCode=0, caCustomerNum=5005, caRequestSpecific=null, caCustomerRequest=CaCustomerRequest(caFirstName=bHARATHI t, caLastName=null, caDob=2029-10-08T18:30:00.000Z, caHouseName=EWA, caHouseNum=1231, caPostcode=2131231, caNumPolicies=0, caPhoneMobile=444412312, caPhoneHome=1232131, caEmailAddress=b@subb.com, caPolicyData=null), caCustsecrRequest=null, caPolicyRequest=null)
+2021-11-25 19:38:40.119  WARN 23644 --- [http-nio-6081-exec-3] com.bluescript.demo.Lgacvs01             : dfhcommarea.getCaCustomerNum():5005
+2021-11-25 19:38:40.122 DEBUG 23644 --- [http-nio-6081-exec-3] org.hibernate.SQL                        : 
+    select
+        ksdscusten0_.customernumber as customer1_0_0_,
+        ksdscusten0_.customerdata as customer2_0_0_ 
+    from
+        ksdscust ksdscusten0_ 
+    where
+        ksdscusten0_.customernumber=?
+2021-11-25 19:38:40.123 DEBUG 23644 --- [http-nio-6081-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        ksdscust
+        (customerdata, customernumber) 
+    values
+        (?, ?)
+2021-11-25 19:43:03.961  WARN 23644 --- [http-nio-6081-exec-5] com.bluescript.demo.Lgacvs01             : dfhcommarea:Dfhcommarea(caRequestId=01ACUS, caReturnCode=0, caCustomerNum=5006, caRequestSpecific=null, caCustomerRequest=CaCustomerRequest(caFirstName=Bala, caLastName=null, caDob=2021-11-23T18:30:00.000Z, caHouseName=45, caHouseNum=5555, caPostcode=7777, caNumPolicies=0, caPhoneMobile=6666, caPhoneHome=88888, caEmailAddress=bala@blue.com, caPolicyData=null), caCustsecrRequest=null, caPolicyRequest=null)
+2021-11-25 19:43:03.961  WARN 23644 --- [http-nio-6081-exec-5] com.bluescript.demo.Lgacvs01             : dfhcommarea.getCaCustomerNum():5006
+2021-11-25 19:43:03.962 DEBUG 23644 --- [http-nio-6081-exec-5] org.hibernate.SQL                        : 
+    select
+        ksdscusten0_.customernumber as customer1_0_0_,
+        ksdscusten0_.customerdata as customer2_0_0_ 
+    from
+        ksdscust ksdscusten0_ 
+    where
+        ksdscusten0_.customernumber=?
+2021-11-25 19:43:03.963 DEBUG 23644 --- [http-nio-6081-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        ksdscust
+        (customerdata, customernumber) 
+    values
+        (?, ?)
+2021-11-25 19:52:26.513  WARN 23644 --- [http-nio-6081-exec-7] com.bluescript.demo.Lgacvs01             : dfhcommarea:Dfhcommarea(caRequestId=01ACUS, caReturnCode=0, caCustomerNum=5007, caRequestSpecific=null, caCustomerRequest=CaCustomerRequest(caFirstName=whiteboard, caLastName=null, caDob=2021-11-16T18:30:00.000Z, caHouseName=3, caHouseNum=3, caPostcode=5, caNumPolicies=0, caPhoneMobile=3, caPhoneHome=6, caEmailAddress=a@a.com, caPolicyData=null), caCustsecrRequest=null, caPolicyRequest=null)
+2021-11-25 19:52:26.513  WARN 23644 --- [http-nio-6081-exec-7] com.bluescript.demo.Lgacvs01             : dfhcommarea.getCaCustomerNum():5007
+2021-11-25 19:52:26.514 DEBUG 23644 --- [http-nio-6081-exec-7] org.hibernate.SQL                        : 
+    select
+        ksdscusten0_.customernumber as customer1_0_0_,
+        ksdscusten0_.customerdata as customer2_0_0_ 
+    from
+        ksdscust ksdscusten0_ 
+    where
+        ksdscusten0_.customernumber=?
+2021-11-25 19:52:26.515 DEBUG 23644 --- [http-nio-6081-exec-7] org.hibernate.SQL                        : 
+    insert 
+    into
+        ksdscust
+        (customerdata, customernumber) 
+    values
+        (?, ?)
+2021-11-25 19:57:00.847  WARN 23644 --- [http-nio-6081-exec-9] com.bluescript.demo.Lgacvs01             : dfhcommarea:Dfhcommarea(caRequestId=string, caReturnCode=0, caCustomerNum=44449, caRequestSpecific=string, caCustomerRequest=CaCustomerRequest(caFirstName=string, caLastName=string, caDob=string, caHouseName=string, caHouseNum=string, caPostcode=string, caNumPolicies=0, caPhoneMobile=string, caPhoneHome=string, caEmailAddress=string, caPolicyData=string), caCustsecrRequest=CaCustsecrRequest(caCustsecrPass=string, caCustsecrCount=string, caCustsecrState=string, caCustsecrData=string), caPolicyRequest=CaPolicyRequest(caPolicyNum=0, caPolicyCommon=CaPolicyCommon(caIssueDate=string, caExpiryDate=string, caLastchanged=string, caBrokerid=0, caBrokersref=string, caPayment=0), caPolicySpecific=string, caEndowment=CaEndowment(caEWithProfits=string, caEEquities=string, caEManagedFund=string, caEFundName=string, caETerm=0, caESumAssured=0, caELifeAssured=string, caEPaddingData=string), caHouse=CaHouse(caHPropertyType=string, caHBedrooms=0, caHValue=0, caHHouseName=string, caHHouseNumber=string, caHPostcode=string, caHFiller=string), caMotor=CaMotor(caMMake=string, caMModel=string, caMValue=0, caMRegnumber=string, caMColour=string, caMCc=0, caMManufactured=string, caMPremium=0, caMAccidents=0, caMFiller=string), caCommercial=CaCommercial(caBAddress=string, caBPostcode=string, caBLatitude=string, caBLongitude=string, caBCustomer=string, caBProptype=string, caBFireperil=0, caBFirepremium=0, caBCrimeperil=0, caBCrimepremium=0, caBFloodperil=0, caBFloodpremium=0, caBWeatherperil=0, caBWeatherpremium=0, caBStatus=0, caBRejectreason=string, caBFiller=string), caClaim=CaClaim(caCNum=0, caCDate=string, caCPaid=0, caCValue=0, caCCause=string, caCObservations=string, caCFiller=string)))
+2021-11-25 19:57:00.847  WARN 23644 --- [http-nio-6081-exec-9] com.bluescript.demo.Lgacvs01             : dfhcommarea.getCaCustomerNum():44449
+2021-11-25 19:57:00.849 DEBUG 23644 --- [http-nio-6081-exec-9] org.hibernate.SQL                        : 
+    select
+        ksdscusten0_.customernumber as customer1_0_0_,
+        ksdscusten0_.customerdata as customer2_0_0_ 
+    from
+        ksdscust ksdscusten0_ 
+    where
+        ksdscusten0_.customernumber=?
+2021-11-25 19:57:00.850 DEBUG 23644 --- [http-nio-6081-exec-9] org.hibernate.SQL                        : 
+    insert 
+    into
+        ksdscust
+        (customerdata, customernumber) 
+    values
+        (?, ?)
+2021-11-25 19:57:08.709  WARN 23644 --- [http-nio-6081-exec-10] com.bluescript.demo.Lgacvs01             : dfhcommarea:Dfhcommarea(caRequestId=string, caReturnCode=0, caCustomerNum=4433333, caRequestSpecific=string, caCustomerRequest=CaCustomerRequest(caFirstName=string, caLastName=string, caDob=string, caHouseName=string, caHouseNum=string, caPostcode=string, caNumPolicies=0, caPhoneMobile=string, caPhoneHome=string, caEmailAddress=string, caPolicyData=string), caCustsecrRequest=CaCustsecrRequest(caCustsecrPass=string, caCustsecrCount=string, caCustsecrState=string, caCustsecrData=string), caPolicyRequest=CaPolicyRequest(caPolicyNum=0, caPolicyCommon=CaPolicyCommon(caIssueDate=string, caExpiryDate=string, caLastchanged=string, caBrokerid=0, caBrokersref=string, caPayment=0), caPolicySpecific=string, caEndowment=CaEndowment(caEWithProfits=string, caEEquities=string, caEManagedFund=string, caEFundName=string, caETerm=0, caESumAssured=0, caELifeAssured=string, caEPaddingData=string), caHouse=CaHouse(caHPropertyType=string, caHBedrooms=0, caHValue=0, caHHouseName=string, caHHouseNumber=string, caHPostcode=string, caHFiller=string), caMotor=CaMotor(caMMake=string, caMModel=string, caMValue=0, caMRegnumber=string, caMColour=string, caMCc=0, caMManufactured=string, caMPremium=0, caMAccidents=0, caMFiller=string), caCommercial=CaCommercial(caBAddress=string, caBPostcode=string, caBLatitude=string, caBLongitude=string, caBCustomer=string, caBProptype=string, caBFireperil=0, caBFirepremium=0, caBCrimeperil=0, caBCrimepremium=0, caBFloodperil=0, caBFloodpremium=0, caBWeatherperil=0, caBWeatherpremium=0, caBStatus=0, caBRejectreason=string, caBFiller=string), caClaim=CaClaim(caCNum=0, caCDate=string, caCPaid=0, caCValue=0, caCCause=string, caCObservations=string, caCFiller=string)))
+2021-11-25 19:57:08.709  WARN 23644 --- [http-nio-6081-exec-10] com.bluescript.demo.Lgacvs01             : dfhcommarea.getCaCustomerNum():4433333
+2021-11-25 19:57:08.711 DEBUG 23644 --- [http-nio-6081-exec-10] org.hibernate.SQL                        : 
+    select
+        ksdscusten0_.customernumber as customer1_0_0_,
+        ksdscusten0_.customerdata as customer2_0_0_ 
+    from
+        ksdscust ksdscusten0_ 
+    where
+        ksdscusten0_.customernumber=?
+2021-11-25 19:57:08.712 DEBUG 23644 --- [http-nio-6081-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        ksdscust
+        (customerdata, customernumber) 
+    values
+        (?, ?)
+2021-11-25 20:57:42.431  WARN 23644 --- [http-nio-6081-exec-2] com.bluescript.demo.Lgacvs01             : dfhcommarea:Dfhcommarea(caRequestId=string, caReturnCode=0, caCustomerNum=5008, caRequestSpecific=string, caCustomerRequest=CaCustomerRequest(caFirstName=first, caLastName=string, caDob=string, caHouseName=string, caHouseNum=string, caPostcode=string, caNumPolicies=0, caPhoneMobile=string, caPhoneHome=string, caEmailAddress=string, caPolicyData=string), caCustsecrRequest=CaCustsecrRequest(caCustsecrPass=string, caCustsecrCount=string, caCustsecrState=string, caCustsecrData=string), caPolicyRequest=CaPolicyRequest(caPolicyNum=0, caPolicyCommon=CaPolicyCommon(caIssueDate=string, caExpiryDate=string, caLastchanged=string, caBrokerid=0, caBrokersref=string, caPayment=0), caPolicySpecific=string, caEndowment=CaEndowment(caEWithProfits=string, caEEquities=string, caEManagedFund=string, caEFundName=string, caETerm=0, caESumAssured=0, caELifeAssured=string, caEPaddingData=string), caHouse=CaHouse(caHPropertyType=string, caHBedrooms=0, caHValue=0, caHHouseName=string, caHHouseNumber=string, caHPostcode=string, caHFiller=string), caMotor=CaMotor(caMMake=string, caMModel=string, caMValue=0, caMRegnumber=string, caMColour=string, caMCc=0, caMManufactured=string, caMPremium=0, caMAccidents=0, caMFiller=string), caCommercial=CaCommercial(caBAddress=string, caBPostcode=string, caBLatitude=string, caBLongitude=string, caBCustomer=string, caBProptype=string, caBFireperil=0, caBFirepremium=0, caBCrimeperil=0, caBCrimepremium=0, caBFloodperil=0, caBFloodpremium=0, caBWeatherperil=0, caBWeatherpremium=0, caBStatus=0, caBRejectreason=string, caBFiller=string), caClaim=CaClaim(caCNum=0, caCDate=string, caCPaid=0, caCValue=0, caCCause=string, caCObservations=string, caCFiller=string)))
+2021-11-25 20:57:42.432  WARN 23644 --- [http-nio-6081-exec-2] com.bluescript.demo.Lgacvs01             : dfhcommarea.getCaCustomerNum():5008
+2021-11-25 20:57:42.435 DEBUG 23644 --- [http-nio-6081-exec-2] org.hibernate.SQL                        : 
+    select
+        ksdscusten0_.customernumber as customer1_0_0_,
+        ksdscusten0_.customerdata as customer2_0_0_ 
+    from
+        ksdscust ksdscusten0_ 
+    where
+        ksdscusten0_.customernumber=?
+2021-11-25 20:57:42.438 DEBUG 23644 --- [http-nio-6081-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        ksdscust
+        (customerdata, customernumber) 
+    values
+        (?, ?)
+2021-11-25 21:01:15.943  WARN 23644 --- [http-nio-6081-exec-4] com.bluescript.demo.Lgacvs01             : dfhcommarea:Dfhcommarea(caRequestId=string, caReturnCode=0, caCustomerNum=5009, caRequestSpecific=string, caCustomerRequest=CaCustomerRequest(caFirstName=second, caLastName=string, caDob=string, caHouseName=string, caHouseNum=string, caPostcode=string, caNumPolicies=0, caPhoneMobile=string, caPhoneHome=string, caEmailAddress=string, caPolicyData=string), caCustsecrRequest=CaCustsecrRequest(caCustsecrPass=string, caCustsecrCount=string, caCustsecrState=string, caCustsecrData=string), caPolicyRequest=CaPolicyRequest(caPolicyNum=0, caPolicyCommon=CaPolicyCommon(caIssueDate=string, caExpiryDate=string, caLastchanged=string, caBrokerid=0, caBrokersref=string, caPayment=0), caPolicySpecific=string, caEndowment=CaEndowment(caEWithProfits=string, caEEquities=string, caEManagedFund=string, caEFundName=string, caETerm=0, caESumAssured=0, caELifeAssured=string, caEPaddingData=string), caHouse=CaHouse(caHPropertyType=string, caHBedrooms=0, caHValue=0, caHHouseName=string, caHHouseNumber=string, caHPostcode=string, caHFiller=string), caMotor=CaMotor(caMMake=string, caMModel=string, caMValue=0, caMRegnumber=string, caMColour=string, caMCc=0, caMManufactured=string, caMPremium=0, caMAccidents=0, caMFiller=string), caCommercial=CaCommercial(caBAddress=string, caBPostcode=string, caBLatitude=string, caBLongitude=string, caBCustomer=string, caBProptype=string, caBFireperil=0, caBFirepremium=0, caBCrimeperil=0, caBCrimepremium=0, caBFloodperil=0, caBFloodpremium=0, caBWeatherperil=0, caBWeatherpremium=0, caBStatus=0, caBRejectreason=string, caBFiller=string), caClaim=CaClaim(caCNum=0, caCDate=string, caCPaid=0, caCValue=0, caCCause=string, caCObservations=string, caCFiller=string)))
+2021-11-25 21:01:15.943  WARN 23644 --- [http-nio-6081-exec-4] com.bluescript.demo.Lgacvs01             : dfhcommarea.getCaCustomerNum():5009
+2021-11-25 21:01:15.947 DEBUG 23644 --- [http-nio-6081-exec-4] org.hibernate.SQL                        : 
+    select
+        ksdscusten0_.customernumber as customer1_0_0_,
+        ksdscusten0_.customerdata as customer2_0_0_ 
+    from
+        ksdscust ksdscusten0_ 
+    where
+        ksdscusten0_.customernumber=?
+2021-11-25 21:01:15.950 DEBUG 23644 --- [http-nio-6081-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        ksdscust
+        (customerdata, customernumber) 
+    values
+        (?, ?)
