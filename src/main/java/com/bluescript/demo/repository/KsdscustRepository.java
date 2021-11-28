@@ -1,6 +1,5 @@
 package com.bluescript.demo.repository;
 
-
 import javax.transaction.Transactional;
 
 import com.bluescript.demo.entity.ksdsCustEntity;
@@ -13,5 +12,4 @@ import org.springframework.data.repository.CrudRepository;
 @Repository
 public interface KsdscustRepository extends JpaRepository<ksdsCustEntity, Long> {
 
-    
 }
