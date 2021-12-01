@@ -112,16 +112,17 @@ public class Lgacvs01 {
     public ResponseEntity<Dfhcommarea> mainline(@RequestBody Dfhcommarea payload) {
         log.debug("Methodmainlinestarted..");
         BeanUtils.copyProperties(payload, dfhcommarea);
-        log.warn("dfhcommarea:"+dfhcommarea);
+        log.warn("dfhcommarea:" + dfhcommarea);
         try {
-           // ksdscust.save(Long.valueOf(dfhcommarea.getCaCustomerNum()));
-            ksdsCustEntity k = new ksdsCustEntity(dfhcommarea.getCaCustomerNum(),dfhcommarea.getCaCustomerRequest().toString());
-            log.warn("dfhcommarea.getCaCustomerNum():"+dfhcommarea.getCaCustomerNum());
-            
+            // ksdscust.save(Long.valueOf(dfhcommarea.getCaCustomerNum()));
+            ksdsCustEntity k = new ksdsCustEntity(dfhcommarea.getCaCustomerNum(),
+                    dfhcommarea.getCaCustomerRequest().toString());
+            log.warn("dfhcommarea.getCaCustomerNum():" + dfhcommarea.getCaCustomerNum());
+
             // k.setCustomerNum(dfhcommarea.getCaCustomerNum());
             // k.setCustomerData(dfhcommarea.getCaCustomerRequest().toString());
             ksdscustrepo.saveAndFlush(k);
-             
+
         } catch (Exception e) {
             log.error(e);
             wsResp = 1;
@@ -129,9 +130,9 @@ public class Lgacvs01 {
         if (wsResp > 0) {
 
             dfhcommarea.setCaReturnCode(80);
-           // writeErrorMessage();
+            // writeErrorMessage();
             log.error("Error code :, LGV0");
-            //throw new RuntimeException("LGV0");
+            // throw new RuntimeException("LGV0");
             /* return */
 
         }
@@ -151,8 +152,7 @@ public class Lgacvs01 {
         WebClient webclientBuilder = WebClient.create(LGSTSQ_HOST);
         try {
             Mono<ErrorMsg> lgstsqResp = webclientBuilder.post().uri(LGSTSQ_URI)
-                    .body(Mono.just(errorMsg), ErrorMsg.class).retrieve().bodyToMono(ErrorMsg.class)
-                    .timeout(Duration.ofMillis(10_000));
+                    .body(Mono.just(errorMsg), ErrorMsg.class).retrieve().bodyToMono(ErrorMsg.class);// .timeout(Duration.ofMillis(10_000));
             errorMsg = lgstsqResp.block();
         } catch (Exception e) {
             log.error(e);
@@ -161,8 +161,7 @@ public class Lgacvs01 {
             if (eibcalen < 91) {
                 try {
                     Mono<ErrorMsg> lgstsqResp = webclientBuilder.post().uri(LGSTSQ_URI)
-                            .body(Mono.just(errorMsg), ErrorMsg.class).retrieve().bodyToMono(ErrorMsg.class)
-                            .timeout(Duration.ofMillis(10_000));
+                            .body(Mono.just(errorMsg), ErrorMsg.class).retrieve().bodyToMono(ErrorMsg.class);// .timeout(Duration.ofMillis(10_000));
                     errorMsg = lgstsqResp.block();
                 } catch (Exception e) {
                     log.error(e);
@@ -171,8 +170,7 @@ public class Lgacvs01 {
             } else {
                 try {
                     Mono<String> lgstsqResp = webclientBuilder.post().uri(LGSTSQ_URI)
-                            .body(Mono.just(caErrorMsg), String.class).retrieve().bodyToMono(String.class)
-                            .timeout(Duration.ofMillis(10_000));
+                            .body(Mono.just(caErrorMsg), String.class).retrieve().bodyToMono(String.class);// .timeout(Duration.ofMillis(10_000));
                     caErrorMsg = lgstsqResp.block();
                 } catch (Exception e) {
                     log.error(e);
