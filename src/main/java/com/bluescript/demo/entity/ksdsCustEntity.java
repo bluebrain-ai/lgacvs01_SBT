@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -24,6 +25,8 @@ public class ksdsCustEntity {
     @Id
     @Column(name = "CUSTOMERNUMBER")
     private long customerNum;
+
+    @Lob
     @Column(name = "CUSTOMERDATA")
     private String customerData;
 }
